@@ -1,3 +1,7 @@
+https://github.com/gnongkynrih/eshop
+
+search for the project eshop
+
 AFTER DOWNLOADING THE CODE
 
 run the command from your project folder
@@ -6,7 +10,6 @@ composer install
 create the database as per the .env file
 migrate the tables using the command
 php artisan migrate
-
 php artisan serve // to run the server
 npm run dev --- to enable hot restart
 
