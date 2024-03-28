@@ -11,5 +11,7 @@ Route::get('/', function () {
 });
 
 Route::controller(ProfileController::class)->group(function(){
+    Route::get('/profile','index')->name('profile.index');
     Route::get('/profile/create','create')->name('profile.create');
+    Route::post('/profile/saveprofile','saveProfile')->name('profile.saveprofile');
 });

@@ -32,6 +32,9 @@ create database dbname
 dbeaver
 xampp php 8
 composer
+Important
+To create a symbolic link between public and storage folder use the command
+php artisan storage:link
 
 composer create-project laravel/laravel projectname
 
