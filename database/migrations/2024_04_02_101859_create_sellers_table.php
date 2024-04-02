@@ -11,18 +11,24 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('sellers', function (Blueprint $table) {
             $table->id();
-            $table->string('name',50)->unique();
+            $table->string('company_name', 100);
+            $table->string('address', 2550);
+            $table->string('full_name', 100);
+            $table->string('gst_no', 17);
+            $table->string('phone', 50);
+            $table->foreignId('user_id' )->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('sellers');
     }
 };

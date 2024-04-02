@@ -63,3 +63,7 @@ in the applicants table to link with admission users table the fk column will be
 
 php artisan make:migration add_column_a
 ddress_proof_to_table_applicants --table=applicants
+
+to add new columns to existing table
+php artisan make:migration nameofthemigration --table=tablename
+eg. php artisan make:migration add_column_user_type_to_table_users --table=users

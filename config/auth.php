@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'api',
+        'guard' => 'web',
         'passwords' => 'users',
     ],
 
@@ -44,10 +44,10 @@ return [
             'driver' => 'jwt',
             'provider' => 'admission_users'
         ],
-        'admission' => [
-            'driver' => 'jwt',
-            'provider' => 'admission_users'
-        ],
+        // 'admission' => [
+        //     'driver' => 'jwt',
+        //     'provider' => 'admission_users'
+        // ],
     ],
 
     /*
@@ -72,10 +72,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-        'admission_users' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\AdmissionUser::class,
-        ],
+        // 'admission_users' => [
+        //     'driver' => 'eloquent',
+        //     'model' => App\Models\AdmissionUser::class,
+        // ],
 
         // 'users' => [
         //     'driver' => 'database',
