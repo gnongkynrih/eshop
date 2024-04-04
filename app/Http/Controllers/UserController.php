@@ -22,12 +22,15 @@ class UserController extends Controller
             'password_confirmation' => 'required|same:password',
         ]);
 
+        //create new user
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->save();
 
+        //assign the role of buyer to the customer
+        $user->assignRole('customer');
         
         
         return redirect()->route('user.login');
@@ -43,7 +46,18 @@ class UserController extends Controller
             'password' => 'required',
         ]);
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
-            dd(Auth::user()->name);
+            
+            // //select * from users where id = Auth::user()->id
+            $user = User::find(Auth::user()->id);
+            if($user->hasRole('seller')){
+                return redirect()->route('seller.profile');
+            }else if($user->hasRole('buyer')){
+                return redirect()->route('buyer.profile');
+            }
+            // //assign role
+            // $user->assignRole('customer');
+            //get the role of the user
+
         }
         return redirect()->back()->with('failure', 'Invalid credentials');
         dd(Auth::user());
