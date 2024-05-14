@@ -1,6 +1,42 @@
 https://github.com/gnongkynrih/eshop
 
+razorpay
+https://razorpay.com/docs/payments/server-integration/php/install/#prerequisites
+to install razor pay
+composer require razorpay/razorpay:2.\*
+
+Add Below Details For Trial :
+
+Visa Card No : 4111111111111111
+
+Mobile No : 1231231231
+
+exipry shoud be future date
+cvv can be anything
+OTP No : anything
+razorpay_payment_id
+
+mailhog --- to test email
+https://github.com/mailhog/MailHog/tree/master
+https://sourceforge.net/projects/mailhog.mirror/
+
+configure mailhog in laravel in the .env file
+MAIL_MAILER=smtp
+MAIL_HOST=localhost
+MAIL_PORT=1025
+
+To create mailable class
+php artisan make:mail RegistrationMail
+it will create a file RegistrationMail.php in app/mail folder
+
+run mail hog... to check email type
+http://localhost:8025/
+
 search for the project eshop
+
+pdf
+composer require barryvdh/laravel-dompdf
+reference... https://www.positronx.io/how-to-generate-pdf-in-laravel-with-dompdf/#tc_10431_02
 
 AFTER DOWNLOADING THE CODE
 
